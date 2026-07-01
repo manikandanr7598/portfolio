@@ -1,0 +1,238 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow-x:hidden}
+button{border:none;background:none;cursor:pointer;font:inherit}
+
+/* ── Hero shell ── */
+.hero{position:relative;width:100%;height:100vh;min-height:640px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:flex-start}
+.ambient-video{position:absolute;inset:-5%;width:110%;height:110%;object-fit:cover;filter:blur(40px) saturate(1.4) brightness(0.55);transform:scale(1.08);z-index:0;pointer-events:none}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:1;opacity:0.82}
+.grad-top{position:absolute;top:0;left:0;right:0;height:22%;z-index:2;background:linear-gradient(to bottom,rgba(0,0,0,.5),transparent);pointer-events:none}
+.grad-left{position:absolute;inset:0;z-index:2;background:linear-gradient(105deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.62) 36%,rgba(0,0,0,.22) 60%,transparent 80%);pointer-events:none}
+.grad-bottom{position:absolute;bottom:0;left:0;right:0;height:45%;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.4) 50%,transparent);pointer-events:none}
+.grad-warm{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 60% 80% at 0% 60%,rgba(255,110,30,.09),transparent 70%);pointer-events:none}
+#cinematic-canvas{position:absolute;inset:0;width:100%!important;height:100%!important;z-index:3;pointer-events:none}
+
+/* ── Content overlay ── */
+.content{position:relative;z-index:10;padding:0 6vw;max-width:960px;width:100%}
+
+/* ── Tagline ── */
+.tagline{font-family:'SF Mono','Fira Mono',monospace;font-size:clamp(9px,1.05vw,12px);font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,140,66,.92);margin:0 0 24px;display:flex;align-items:center;gap:12px;visibility:hidden}
+.tagline::before{content:'';display:inline-block;width:32px;height:1px;background:rgba(255,140,66,.7);flex-shrink:0}
+
+/* ── Name ── */
+.name-block{margin:0 0 24px;line-height:.88}
+.name-a,.name-b{display:block;font-weight:800;font-size:clamp(56px,9.5vw,136px);letter-spacing:-.03em;line-height:.9;visibility:hidden}
+.name-a{color:#fff}
+.name-b{background:linear-gradient(135deg,#fff 40%,rgba(255,140,66,.85) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── Role text ── */
+.role-text{font-weight:300;font-size:clamp(13px,1.4vw,16px);line-height:1.75;color:rgba(255,255,255,.7);max-width:520px;margin:0 0 28px;visibility:hidden}
+.role-text strong{color:rgba(66,200,255,.9);font-weight:500}
+
+/* ── Stats strip ── */
+.stats-strip{display:flex;gap:32px;margin:0 0 32px;visibility:hidden}
+.stat{display:flex;flex-direction:column;gap:3px}
+.stat-number{font-family:'SF Mono',monospace;font-size:clamp(20px,2.4vw,28px);font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1}
+.stat-number span{color:rgba(255,140,66,.9)}
+.stat-label{font-family:'SF Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.stat-divider{width:1px;background:rgba(255,255,255,.1);align-self:stretch;margin:2px 0}
+
+/* ── Experience cards ── */
+.exp-cards{display:flex;gap:10px;margin:0 0 28px;visibility:hidden}
+.exp-card{padding:12px 16px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:rgba(255,255,255,.04);backdrop-filter:blur(16px);flex:1;min-width:0}
+.exp-card-company{font-family:'SF Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,140,66,.8);margin-bottom:4px}
+.exp-card-role{font-size:12px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.exp-card-period{font-family:'SF Mono',monospace;font-size:9px;color:rgba(255,255,255,.38);letter-spacing:.06em}
+
+/* ── Cert badges ── */
+.cert-row{display:flex;gap:8px;margin:0 0 32px;flex-wrap:wrap;visibility:hidden}
+.cert-badge{display:flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid rgba(66,200,255,.2);border-radius:20px;background:rgba(66,200,255,.06);font-family:'SF Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(66,200,255,.8)}
+.cert-icon{width:6px;height:6px;border-radius:50%;background:rgba(66,200,255,.9);flex-shrink:0}
+
+/* ── Bottom action row ── */
+.action-row{display:flex;align-items:center;gap:12px;visibility:hidden}
+.tech-btn{display:inline-flex;align-items:center;gap:10px;padding:11px 22px;border:1px solid rgba(255,255,255,.18);border-radius:4px;background:rgba(255,255,255,.06);backdrop-filter:blur(16px);color:rgba(255,255,255,.9);font-family:'SF Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .3s,border-color .3s,transform .2s}
+.tech-btn:hover{background:rgba(255,140,66,.12);border-color:rgba(255,140,66,.45);transform:translateY(-1px)}
+.tech-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,140,66,.9);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.ctrl-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);backdrop-filter:blur(20px);color:rgba(255,255,255,.88);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .15s}
+.ctrl-btn:hover{background:rgba(255,255,255,.16);transform:scale(1.05)}
+.ctrl-btn svg{width:15px;height:15px;fill:currentColor}
+
+/* ── Contact link ── */
+.contact-link{font-family:'SF Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s;padding:11px 0}
+.contact-link:hover{color:rgba(255,140,66,.8)}
+
+/* ── Sound badge ── */
+.sound-badge{position:absolute;bottom:92px;right:40px;z-index:12;display:flex;align-items:center;gap:8px;padding:8px 14px 8px 10px;border:1px solid rgba(255,255,255,.15);border-radius:40px;background:rgba(0,0,0,.35);backdrop-filter:blur(16px);color:rgba(255,255,255,.75);font-family:'SF Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;visibility:hidden}
+.sound-ping{width:8px;height:8px;border-radius:50%;background:rgba(66,200,255,.9);animation:ping 1.4s ease-in-out infinite}
+@keyframes ping{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(66,200,255,.5)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(66,200,255,0)}}
+
+/* ── Scroll indicator ── */
+.scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:12;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;color:rgba(255,255,255,.4);font-family:'SF Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;visibility:hidden}
+.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);transform-origin:top center}
+
+/* ── Drawer ── */
+.drawer-overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:flex-end;padding:24px;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.drawer{width:min(560px,95vw);max-height:88vh;background:rgba(6,6,10,.94);border:1px solid rgba(255,255,255,.1);border-radius:16px;backdrop-filter:blur(40px);overflow-y:auto;animation:slideUp .45s cubic-bezier(.16,1,.3,1);box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04)}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.drawer-header{padding:28px 28px 20px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;justify-content:space-between}
+.drawer-title{font-size:18px;font-weight:600;color:#fff;margin:0 0 4px}
+.drawer-subtitle{font-family:'SF Mono',monospace;font-size:10px;letter-spacing:.15em;color:rgba(255,140,66,.8);text-transform:uppercase}
+.drawer-close{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:background .2s;line-height:1}
+.drawer-close:hover{background:rgba(255,255,255,.14)}
+.drawer-body{padding:24px 28px 28px}
+
+/* Drawer tabs */
+.drawer-tabs{display:flex;gap:2px;margin-bottom:24px;background:rgba(255,255,255,.04);border-radius:8px;padding:3px}
+.drawer-tab{flex:1;padding:8px 4px;text-align:center;font-family:'SF Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;border-radius:6px;transition:background .2s,color .2s;border:none;background:none}
+.drawer-tab.active{background:rgba(255,255,255,.1);color:rgba(255,255,255,.9)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+
+/* Tech pills */
+.tech-cat{margin-bottom:22px}
+.tech-cat-label{font-family:'SF Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(66,200,255,.7);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.tech-cat-label::after{content:'';flex:1;height:1px;background:rgba(66,200,255,.12)}
+.tech-pills{display:flex;flex-wrap:wrap;gap:7px}
+.tech-pill{padding:5px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);font-family:'SF Mono',monospace;font-size:11px;color:rgba(255,255,255,.75);letter-spacing:.03em;transition:border-color .2s,background .2s;cursor:default}
+.tech-pill:hover{border-color:rgba(255,140,66,.35);background:rgba(255,140,66,.06);color:rgba(255,200,140,.9)}
+
+/* Experience timeline in drawer */
+.exp-timeline{display:flex;flex-direction:column;gap:0}
+.exp-item{position:relative;padding:0 0 24px 28px;border-left:1px solid rgba(255,255,255,.08)}
+.exp-item:last-child{padding-bottom:0;border-left-color:transparent}
+.exp-dot{position:absolute;left:-5px;top:4px;width:9px;height:9px;border-radius:50%;background:rgba(255,140,66,.9);border:2px solid rgba(0,0,0,.8)}
+.exp-company{font-family:'SF Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,140,66,.7);margin-bottom:3px}
+.exp-role{font-size:14px;font-weight:600;color:#fff;margin-bottom:2px}
+.exp-period{font-family:'SF Mono',monospace;font-size:9px;color:rgba(255,255,255,.35);margin-bottom:10px;letter-spacing:.06em}
+.exp-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px}
+.exp-bullets li{font-size:12px;color:rgba(255,255,255,.6);line-height:1.5;padding-left:12px;position:relative}
+.exp-bullets li::before{content:'—';position:absolute;left:0;color:rgba(66,200,255,.4);font-size:10px}
+
+/* Certs in drawer */
+.cert-list{display:flex;flex-direction:column;gap:12px}
+.cert-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.03)}
+.cert-logo{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'SF Mono',monospace;font-size:10px;font-weight:700;letter-spacing:-.02em}
+.cert-logo.oracle{background:rgba(244,67,54,.15);color:#f44336;border:1px solid rgba(244,67,54,.25)}
+.cert-logo.cisco{background:rgba(0,120,215,.15);color:#0078d7;border:1px solid rgba(0,120,215,.25)}
+.cert-logo.ec{background:rgba(66,200,255,.12);color:rgba(66,200,255,.9);border:1px solid rgba(66,200,255,.2)}
+.cert-logo.ms{background:rgba(127,186,0,.12);color:#7fba00;border:1px solid rgba(127,186,0,.2)}
+.cert-info{flex:1}
+.cert-name{font-size:13px;font-weight:500;color:rgba(255,255,255,.88);margin-bottom:2px}
+.cert-issuer{font-family:'SF Mono',monospace;font-size:9px;color:rgba(255,255,255,.38);letter-spacing:.08em;text-transform:uppercase}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .content{padding:0 5vw}
+  .name-a,.name-b{font-size:clamp(48px,14vw,72px)}
+  .stats-strip{gap:20px}
+  .exp-cards{flex-direction:column;gap:8px}
+  .exp-card{min-width:unset}
+  .sound-badge{right:16px;bottom:80px}
+  .drawer-overlay{padding:0;align-items:flex-end;justify-content:center}
+  .drawer{width:100%;border-radius:16px 16px 0 0}
+  .cert-row{gap:6px}
+}
+@media(prefers-reduced-motion:reduce){.tech-dot,.sound-ping{animation:none}}
+
+/* ════════════════════════════════════════════════════════════
+   PROFILE PAGE — content below the hero
+   ════════════════════════════════════════════════════════════ */
+.profile-page{position:relative;background:#050508;padding:120px 6vw 100px;overflow:hidden}
+.profile-page::before{content:'';position:absolute;top:-20%;left:-10%;width:50%;height:60%;background:radial-gradient(ellipse,rgba(255,140,66,.06),transparent 70%);pointer-events:none}
+.profile-page::after{content:'';position:absolute;bottom:-10%;right:-10%;width:50%;height:50%;background:radial-gradient(ellipse,rgba(66,200,255,.05),transparent 70%);pointer-events:none}
+.profile-inner{position:relative;max-width:1100px;margin:0 auto;z-index:1}
+
+.section-label{font-family:'SF Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,140,66,.8);margin-bottom:12px;display:flex;align-items:center;gap:12px;opacity:0;transform:translateY(16px)}
+.section-label::before{content:'';width:24px;height:1px;background:rgba(255,140,66,.6)}
+.section-title{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:48px;opacity:0;transform:translateY(20px)}
+.section-title em{font-style:normal;color:rgba(255,140,66,.9)}
+
+/* ── About ── */
+.about-block{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;margin-bottom:140px;align-items:start}
+.about-text{font-size:clamp(14px,1.3vw,17px);line-height:1.85;color:rgba(255,255,255,.65);font-weight:300;opacity:0;transform:translateY(20px)}
+.about-text strong{color:rgba(255,255,255,.92);font-weight:500}
+.about-text+.about-text{margin-top:18px}
+.about-meta{display:flex;flex-direction:column;gap:20px;opacity:0;transform:translateY(20px)}
+.meta-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.meta-key{font-family:'SF Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.meta-val{font-size:13px;color:rgba(255,255,255,.85);font-weight:500;text-align:right}
+
+/* ── Skills grid ── */
+.skills-section{margin-bottom:140px}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-card{padding:28px 26px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.025);backdrop-filter:blur(20px);transition:border-color .3s ease,background .3s ease,transform .3s ease;opacity:0;transform:translateY(24px)}
+.skill-card:hover{border-color:rgba(255,140,66,.3);background:rgba(255,140,66,.03);transform:translateY(-4px)}
+.skill-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:rgba(66,200,255,.1);border:1px solid rgba(66,200,255,.2)}
+.skill-icon svg{width:18px;height:18px;stroke:rgba(66,200,255,.9);fill:none;stroke-width:1.6}
+.skill-card-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:10px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.skill-tag{font-family:'SF Mono',monospace;font-size:10px;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.55);letter-spacing:.03em}
+
+/* ── Experience timeline ── */
+.exp-section{margin-bottom:140px}
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,rgba(255,140,66,.5),rgba(66,200,255,.3) 60%,transparent)}
+.tl-item{position:relative;padding-bottom:56px;opacity:0;transform:translateX(-20px)}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-37px;top:4px;width:11px;height:11px;border-radius:50%;background:#050508;border:2px solid rgba(255,140,66,.85);box-shadow:0 0 0 4px rgba(5,5,8,1),0 0 16px rgba(255,140,66,.3)}
+.tl-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.tl-role{font-size:19px;font-weight:700;color:#fff}
+.tl-period{font-family:'SF Mono',monospace;font-size:11px;color:rgba(255,140,66,.75);letter-spacing:.06em;white-space:nowrap}
+.tl-company{font-size:13px;color:rgba(66,200,255,.8);font-weight:500;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.tl-company::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.06)}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:7px;max-width:680px}
+.tl-bullets li{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.6);padding-left:16px;position:relative}
+.tl-bullets li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:rgba(66,200,255,.5)}
+
+/* ── Certifications ── */
+.certs-section{margin-bottom:140px}
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cert-card{display:flex;align-items:center;gap:16px;padding:20px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.025);opacity:0;transform:translateY(20px);transition:border-color .3s ease,transform .3s ease}
+.cert-card:hover{border-color:rgba(255,140,66,.3);transform:translateY(-3px)}
+.cert-mark{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'SF Mono',monospace;font-size:11px;font-weight:700;flex-shrink:0;border:1px solid}
+.cert-text-name{font-size:13px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:3px;line-height:1.3}
+.cert-text-issuer{font-family:'SF Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase}
+
+/* ── Education ── */
+.edu-section{margin-bottom:140px}
+.edu-list{display:flex;flex-direction:column;gap:0}
+.edu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.07);gap:24px;opacity:0;transform:translateY(16px)}
+.edu-item:last-child{border-bottom:none}
+.edu-degree{font-size:16px;font-weight:600;color:#fff;margin-bottom:4px}
+.edu-school{font-size:13px;color:rgba(255,140,66,.8)}
+.edu-period{font-family:'SF Mono',monospace;font-size:11px;color:rgba(255,255,255,.4);white-space:nowrap;text-align:right}
+
+/* ── Contact / CTA ── */
+.contact-section{text-align:center;padding:80px 20px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(160deg,rgba(255,140,66,.05),rgba(66,200,255,.04));opacity:0;transform:translateY(24px)}
+.contact-title{font-size:clamp(26px,3.6vw,42px);font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.02em}
+.contact-sub{font-size:14px;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 36px;line-height:1.7}
+.contact-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;background:rgba(255,140,66,.95);color:#000;font-weight:600;font-size:13px;text-decoration:none;letter-spacing:.02em;transition:transform .2s ease,background .2s ease}
+.btn-primary:hover{transform:translateY(-2px);background:#fff}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.85);font-weight:500;font-size:13px;text-decoration:none;letter-spacing:.02em;background:rgba(255,255,255,.04);transition:transform .2s ease,border-color .2s ease}
+.btn-secondary:hover{transform:translateY(-2px);border-color:rgba(66,200,255,.4)}
+
+.footer-note{text-align:center;margin-top:60px;font-family:'SF Mono',monospace;font-size:10px;letter-spacing:.15em;color:rgba(255,255,255,.25);text-transform:uppercase}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .about-block{grid-template-columns:1fr;gap:36px}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .certs-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .profile-page{padding:80px 6vw 70px}
+  .section-title{margin-bottom:32px}
+  .about-block,.skills-section,.exp-section,.certs-section,.edu-section{margin-bottom:90px}
+  .skills-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr}
+  .timeline{padding-left:24px}
+  .tl-dot{left:-29px}
+  .tl-header{flex-direction:column;gap:2px}
+  .edu-item{flex-direction:column;gap:6px}
+  .edu-period{text-align:left}
+  .contact-section{padding:56px 20px}
+}

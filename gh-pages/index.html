@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Manikandan Raju — System Engineer & Cloud Architect specializing in Oracle Cloud Infrastructure (OCI), Linux administration, infrastructure automation, and enterprise network security.">
+<meta property="og:title" content="Manikandan Raju — Cloud Architect & System Engineer">
+<meta property="og:description" content="5+ years in system engineering & cloud architecture. Oracle Cloud certified, CEH, CCNA. Based in Dublin, Ireland.">
+<title>Manikandan Raju — Cloud Architect & System Engineer</title>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+</head>
+<body>
+
+<section class="hero" id="hero">
+  <video class="ambient-video" src="assets/hero-video.mp4" autoplay loop muted playsinline aria-hidden="true"></video>
+  <video id="main-video" class="hero-video" src="assets/hero-video.mp4" autoplay loop muted playsinline></video>
+  <div class="grad-top"></div>
+  <div class="grad-left"></div>
+  <div class="grad-bottom"></div>
+  <div class="grad-warm"></div>
+  <canvas id="cinematic-canvas"></canvas>
+
+  <div class="content">
+
+    <!-- Tagline -->
+    <p class="tagline" id="tagline">MBA Cloud Computing · Dublin Business School&nbsp;&nbsp;|&nbsp;&nbsp;Oracle Cloud Certified&nbsp;&nbsp;|&nbsp;&nbsp;CEH Certified</p>
+
+    <!-- Name -->
+    <h1 class="name-block">
+      <span class="name-a" id="name-a">MANIKANDAN</span>
+      <span class="name-b" id="name-b">RAJU</span>
+    </h1>
+
+    <!-- Role -->
+    <p class="role-text" id="role-text">
+      System Engineer &amp; Cloud Architect — <strong>Oracle Cloud (OCI)</strong> &amp; <strong>AWS</strong> certified,
+      specializing in Linux/Windows administration, infrastructure automation with
+      Terraform &amp; Ansible, containerization, and enterprise network security.
+    </p>
+
+    <!-- Stats -->
+    <div class="stats-strip" id="stats-strip">
+      <div class="stat">
+        <span class="stat-number">5<span>+</span></span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Companies</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">95<span>%</span></span>
+        <span class="stat-label">Efficiency Gain</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">2<span>×</span></span>
+        <span class="stat-label">System Throughput</span>
+      </div>
+    </div>
+
+    <!-- Experience cards -->
+    <div class="exp-cards" id="exp-cards">
+      <div class="exp-card">
+        <p class="exp-card-company">Oracle</p>
+        <p class="exp-card-role">System Analyst</p>
+        <p class="exp-card-period">Oct 2023 — May 2025 · Bangalore</p>
+      </div>
+      <div class="exp-card">
+        <p class="exp-card-company">Cerner Corporation</p>
+        <p class="exp-card-role">System Engineer</p>
+        <p class="exp-card-period">Dec 2021 — Oct 2023 · Bangalore</p>
+      </div>
+      <div class="exp-card">
+        <p class="exp-card-company">Rathinam College</p>
+        <p class="exp-card-role">System Administrator</p>
+        <p class="exp-card-period">Nov 2020 — Dec 2021 · Coimbatore</p>
+      </div>
+    </div>
+
+    <!-- Cert badges -->
+    <div class="cert-row" id="cert-row">
+      <span class="cert-badge"><span class="cert-icon"></span>OCI Foundations 2023</span>
+      <span class="cert-badge"><span class="cert-icon"></span>CEH · Ethical Hacking</span>
+      <span class="cert-badge"><span class="cert-icon"></span>CCNA Networking</span>
+      <span class="cert-badge"><span class="cert-icon"></span>MCITP</span>
+      <span class="cert-badge"><span class="cert-icon"></span>AWS Cloud Intro</span>
+    </div>
+
+    <!-- Actions -->
+    <div class="action-row" id="action-row">
+      <button class="tech-btn" onclick="openDrawer()">
+        <span class="tech-dot"></span>
+        View Full Profile
+      </button>
+      <button class="ctrl-btn" id="play-btn" onclick="togglePlay()" aria-label="Pause video">
+        <svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      </button>
+      <button class="ctrl-btn" id="mute-btn" onclick="toggleMute()" aria-label="Unmute video">
+        <svg id="mute-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      </button>
+      <a class="contact-link" href="mailto:manikandanr7598@gmail.com">manikandanr7598@gmail.com</a>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- Sound badge -->
+  <div class="sound-badge" id="sound-badge">
+    <span class="sound-ping"></span>
+    Tap for sound
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-ind" id="scroll-ind" onclick="scrollNext()" role="button" tabindex="0">
+    <div class="scroll-line" id="scroll-line"></div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:13px;height:13px"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ── Full Profile Drawer ── -->
+<div class="drawer-overlay" id="drawer-overlay" style="display:none" onclick="if(event.target===this)closeDrawer()">
+  <div class="drawer">
+    <div class="drawer-header">
+      <div>
+        <p class="drawer-subtitle">Engineering Profile · Dublin, Ireland</p>
+        <h2 class="drawer-title">Manikandan Raju</h2>
+      </div>
+      <button class="drawer-close" onclick="closeDrawer()">×</button>
+    </div>
+    <div class="drawer-body">
+      <div class="drawer-tabs">
+        <button class="drawer-tab active" onclick="switchTab('tech',this)">Tech Stack</button>
+        <button class="drawer-tab" onclick="switchTab('exp',this)">Experience</button>
+        <button class="drawer-tab" onclick="switchTab('certs',this)">Certifications</button>
+      </div>
+
+      <!-- Tech Stack Tab -->
+      <div class="tab-panel active" id="tab-tech">
+        <div class="tech-cat">
+          <p class="tech-cat-label">Cloud Infrastructure</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Oracle Cloud (OCI)</span>
+            <span class="tech-pill">OCI Compute</span>
+            <span class="tech-pill">AWS EC2</span>
+            <span class="tech-pill">AWS S3</span>
+            <span class="tech-pill">AWS IAM</span>
+            <span class="tech-pill">AWS VPC</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <p class="tech-cat-label">Operating Systems</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Linux (RHEL / Ubuntu)</span>
+            <span class="tech-pill">Windows Server 2016</span>
+            <span class="tech-pill">Windows Server 2019</span>
+            <span class="tech-pill">CentOS</span>
+            <span class="tech-pill">Debian</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <p class="tech-cat-label">Containers & Orchestration</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">Kubernetes (K8s)</span>
+            <span class="tech-pill">Jenkins</span>
+            <span class="tech-pill">Helm Charts</span>
+            <span class="tech-pill">Git / GitHub</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <p class="tech-cat-label">Infrastructure as Code</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Terraform</span>
+            <span class="tech-pill">Ansible</span>
+            <span class="tech-pill">Shell Scripting</span>
+            <span class="tech-pill">PowerShell</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <p class="tech-cat-label">Networking & Security</p>
+          <div class="tech-pills">
+            <span class="tech-pill">CCNA Networking</span>
+            <span class="tech-pill">CEH / Ethical Hacking</span>
+            <span class="tech-pill">Firewall Management</span>
+            <span class="tech-pill">VPN Configuration</span>
+            <span class="tech-pill">Load Balancing</span>
+            <span class="tech-pill">CCTV / Surveillance</span>
+            <span class="tech-pill">Cable Laying & Crimping</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <p class="tech-cat-label">Enterprise Systems</p>
+          <div class="tech-pills">
+            <span class="tech-pill">ERP System Support</span>
+            <span class="tech-pill">Office 365 Admin</span>
+            <span class="tech-pill">DBMS</span>
+            <span class="tech-pill">Asset Management</span>
+            <span class="tech-pill">Server Patching</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Tab -->
+      <div class="tab-panel" id="tab-exp">
+        <div class="exp-timeline">
+          <div class="exp-item">
+            <span class="exp-dot"></span>
+            <p class="exp-company">Oracle</p>
+            <p class="exp-role">System Analyst</p>
+            <p class="exp-period">Oct 2023 — May 2025 · Bangalore, India</p>
+            <ul class="exp-bullets">
+              <li>Analysed IT systems, identified bottlenecks, optimized performance</li>
+              <li>Implemented load balancing — doubled overall system efficiency</li>
+              <li>Reduced latency by optimizing servers and database queries</li>
+              <li>Automated maintenance using custom scripts and tools</li>
+              <li>Supported system upgrades with cross-functional team collaboration</li>
+            </ul>
+          </div>
+          <div class="exp-item">
+            <span class="exp-dot"></span>
+            <p class="exp-company">Cerner Corporation</p>
+            <p class="exp-role">System Engineer</p>
+            <p class="exp-period">Dec 2021 — Oct 2023 · Bangalore, India</p>
+            <ul class="exp-bullets">
+              <li>Managed firewall settings maintaining secure network environment</li>
+              <li>Installed surveillance systems securing entire campus infrastructure</li>
+              <li>Supported ERP systems, ensured high uptime performance</li>
+              <li>Monitored systems, improved efficiency by 95%</li>
+              <li>Automated server maintenance using scripting methods</li>
+            </ul>
+          </div>
+          <div class="exp-item">
+            <span class="exp-dot"></span>
+            <p class="exp-company">Rathinam College of Arts and Science</p>
+            <p class="exp-role">System Administrator</p>
+            <p class="exp-period">Nov 2020 — Dec 2021 · Coimbatore, India</p>
+            <ul class="exp-bullets">
+              <li>Supported servers, networks, ERP, and surveillance systems</li>
+              <li>Automated server tasks to enhance system performance</li>
+              <li>Managed firewall configurations ensuring network data security</li>
+              <li>Office 365 administration, hardware management, wireless networking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certs Tab -->
+      <div class="tab-panel" id="tab-certs">
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-logo oracle">OCI</div>
+            <div class="cert-info">
+              <p class="cert-name">Oracle Cloud Infrastructure 2023 Certified Foundations Associate</p>
+              <p class="cert-issuer">Oracle · 2023</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-logo ec">CEH</div>
+            <div class="cert-info">
+              <p class="cert-name">Certified Ethical Hacker (CEH)</p>
+              <p class="cert-issuer">EC-Council</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-logo cisco">CCNA</div>
+            <div class="cert-info">
+              <p class="cert-name">Cisco Certified Network Associate (CCNA)</p>
+              <p class="cert-issuer">Cisco Systems</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-logo ms">MS</div>
+            <div class="cert-info">
+              <p class="cert-name">Microsoft Certified IT Professional (MCITP)</p>
+              <p class="cert-issuer">Microsoft</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-logo" style="background:rgba(255,140,66,.12);color:rgba(255,140,66,.9);border:1px solid rgba(255,140,66,.2)">AWS</div>
+            <div class="cert-info">
+              <p class="cert-name">Introduction to AWS and Cloud Computing</p>
+              <p class="cert-issuer">Amazon Web Services</p>
+            </div>
+          </div>
+          <div class="cert-item" style="border-color:rgba(255,255,255,.12)">
+            <div class="cert-logo" style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12);font-size:8px">MBA</div>
+            <div class="cert-info">
+              <p class="cert-name">MBA in Cloud Computing (completing May 2026)</p>
+              <p class="cert-issuer">Dublin Business School · Dublin, Ireland</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="profile-page" id="next-section">
+  <div class="profile-inner">
+
+    <!-- ── About ── -->
+    <div id="sec-about">
+      <p class="section-label rv">About</p>
+      <h2 class="section-title rv">The engineer behind <em>the infrastructure</em></h2>
+      <div class="about-block">
+        <div>
+          <p class="about-text rv">I'm <strong>Manikandan Raju</strong>, currently pursuing my MBA in Cloud Computing at Dublin Business School, Ireland. With a strong foundation in IT and over 5 years of experience in system engineering and administration, I bring both technical depth and a solutions-driven mindset to every role I take on.</p>
+          <p class="about-text rv">My professional journey spans <strong>Oracle</strong> and <strong>Cerner Corporation</strong>, where I improved system efficiency, enhanced security, and collaborated with cross-functional teams — consistently delivering measurable results like a 100% improvement in performance through scripting and automation.</p>
+          <p class="about-text rv">My technical expertise covers Windows/Linux administration, <strong>Oracle Cloud (OCI)</strong>, networking (CCNA), scripting (PowerShell/Shell), and tools like Docker, Kubernetes, Ansible, and Terraform — making me adaptable across infrastructure and cloud-based environments.</p>
+        </div>
+        <div class="about-meta">
+          <div class="meta-row"><span class="meta-key">Location</span><span class="meta-val">Dublin, Ireland</span></div>
+          <div class="meta-row"><span class="meta-key">Experience</span><span class="meta-val">5+ Years</span></div>
+          <div class="meta-row"><span class="meta-key">Education</span><span class="meta-val">MBA · Cloud Computing</span></div>
+          <div class="meta-row"><span class="meta-key">Languages</span><span class="meta-val">English, Malayalam</span></div>
+          <div class="meta-row"><span class="meta-key">Availability</span><span class="meta-val">Open to Opportunities</span></div>
+          <div class="meta-row"><span class="meta-key">Work Mode</span><span class="meta-val">Hybrid / On-Site / Remote</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Skills ── -->
+    <div class="skills-section" id="sec-skills">
+      <p class="section-label rv">Capabilities</p>
+      <h2 class="section-title rv">Technical <em>arsenal</em></h2>
+      <div class="skills-grid">
+
+        <div class="skill-card rv">
+          <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M6 19a4 4 0 010-8 5 5 0 019.6-1.5A4.5 4.5 0 0119 18H6z"/></svg></div>
+          <p class="skill-card-title">Cloud Infrastructure</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Oracle Cloud (OCI)</span><span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span><span class="skill-tag">AWS IAM</span><span class="skill-tag">AWS VPC</span>
+          </div>
+        </div>
+
+        <div class="skill-card rv">
+          <div class="skill-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div>
+          <p class="skill-card-title">Operating Systems</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Linux RHEL/Ubuntu</span><span class="skill-tag">Windows Server</span><span class="skill-tag">CentOS</span><span class="skill-tag">Debian</span>
+          </div>
+        </div>
+
+        <div class="skill-card rv">
+          <div class="skill-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <p class="skill-card-title">Containers & Orchestration</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">Jenkins</span><span class="skill-tag">Git</span>
+          </div>
+        </div>
+
+        <div class="skill-card rv">
+          <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4-8 4-8-4zM4 7v10l8 4 8-4V7"/></svg></div>
+          <p class="skill-card-title">Infrastructure as Code</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Terraform</span><span class="skill-tag">Ansible</span><span class="skill-tag">Shell Scripting</span><span class="skill-tag">PowerShell</span>
+          </div>
+        </div>
+
+        <div class="skill-card rv">
+          <div class="skill-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <p class="skill-card-title">Networking & Security</p>
+          <div class="skill-tags">
+            <span class="skill-tag">CCNA</span><span class="skill-tag">CEH</span><span class="skill-tag">Firewall Mgmt</span><span class="skill-tag">VPN</span><span class="skill-tag">Load Balancing</span>
+          </div>
+        </div>
+
+        <div class="skill-card rv">
+          <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <p class="skill-card-title">Enterprise Systems</p>
+          <div class="skill-tags">
+            <span class="skill-tag">ERP Support</span><span class="skill-tag">Office 365</span><span class="skill-tag">DBMS</span><span class="skill-tag">Asset Mgmt</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Experience ── -->
+    <div class="exp-section" id="sec-exp">
+      <p class="section-label rv">Career</p>
+      <h2 class="section-title rv">Where I've <em>made impact</em></h2>
+      <div class="timeline">
+
+        <div class="tl-item rv">
+          <span class="tl-dot"></span>
+          <div class="tl-header"><span class="tl-role">System Analyst</span><span class="tl-period">Oct 2023 — May 2025</span></div>
+          <p class="tl-company">Oracle · Bangalore, India</p>
+          <ul class="tl-bullets">
+            <li>Analysed IT systems, identified bottlenecks, optimized performance</li>
+            <li>Implemented load balancing — doubled overall system efficiency</li>
+            <li>Reduced latency by optimizing servers and database queries</li>
+            <li>Automated maintenance using custom scripts and tools</li>
+            <li>Supported system upgrades with cross-functional team collaboration</li>
+          </ul>
+        </div>
+
+        <div class="tl-item rv">
+          <span class="tl-dot"></span>
+          <div class="tl-header"><span class="tl-role">System Engineer</span><span class="tl-period">Dec 2021 — Oct 2023</span></div>
+          <p class="tl-company">Cerner Corporation · Bangalore, India</p>
+          <ul class="tl-bullets">
+            <li>Managed firewall settings maintaining secure network environment</li>
+            <li>Installed surveillance systems securing entire campus infrastructure</li>
+            <li>Supported ERP systems, ensured high uptime performance</li>
+            <li>Monitored systems, improved efficiency by 95%</li>
+            <li>Automated server maintenance using scripting methods</li>
+          </ul>
+        </div>
+
+        <div class="tl-item rv">
+          <span class="tl-dot"></span>
+          <div class="tl-header"><span class="tl-role">System Administrator</span><span class="tl-period">Nov 2020 — Dec 2021</span></div>
+          <p class="tl-company">Rathinam College of Arts and Science · Coimbatore, India</p>
+          <ul class="tl-bullets">
+            <li>Supported servers, networks, ERP, and surveillance systems</li>
+            <li>Automated server tasks to enhance system performance</li>
+            <li>Managed firewall configurations ensuring network data security</li>
+            <li>Office 365 administration, hardware management, wireless networking, cable laying & crimping</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Certifications ── -->
+    <div class="certs-section" id="sec-certs">
+      <p class="section-label rv">Credentials</p>
+      <h2 class="section-title rv">Verified <em>expertise</em></h2>
+      <div class="certs-grid">
+        <div class="cert-card rv">
+          <div class="cert-mark" style="color:#f44336;border-color:rgba(244,67,54,.3);background:rgba(244,67,54,.1)">OCI</div>
+          <div><p class="cert-text-name">OCI 2023 Foundations Associate</p><p class="cert-text-issuer">Oracle</p></div>
+        </div>
+        <div class="cert-card rv">
+          <div class="cert-mark" style="color:rgba(66,200,255,.9);border-color:rgba(66,200,255,.3);background:rgba(66,200,255,.1)">CEH</div>
+          <div><p class="cert-text-name">Certified Ethical Hacker</p><p class="cert-text-issuer">EC-Council</p></div>
+        </div>
+        <div class="cert-card rv">
+          <div class="cert-mark" style="color:#0078d7;border-color:rgba(0,120,215,.3);background:rgba(0,120,215,.1)">CCNA</div>
+          <div><p class="cert-text-name">Cisco Certified Network Associate</p><p class="cert-text-issuer">Cisco Systems</p></div>
+        </div>
+        <div class="cert-card rv">
+          <div class="cert-mark" style="color:#7fba00;border-color:rgba(127,186,0,.3);background:rgba(127,186,0,.1)">MS</div>
+          <div><p class="cert-text-name">MCITP</p><p class="cert-text-issuer">Microsoft</p></div>
+        </div>
+        <div class="cert-card rv">
+          <div class="cert-mark" style="color:rgba(255,140,66,.9);border-color:rgba(255,140,66,.3);background:rgba(255,140,66,.1)">AWS</div>
+          <div><p class="cert-text-name">Intro to AWS & Cloud Computing</p><p class="cert-text-issuer">Amazon Web Services</p></div>
+        </div>
+        <div class="cert-card rv">
+          <div class="cert-mark" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.05)">MBA</div>
+          <div><p class="cert-text-name">MBA, Cloud Computing (2026)</p><p class="cert-text-issuer">Dublin Business School</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Education ── -->
+    <div class="edu-section" id="sec-edu">
+      <p class="section-label rv">Academics</p>
+      <h2 class="section-title rv">Education <em>timeline</em></h2>
+      <div class="edu-list">
+        <div class="edu-item rv">
+          <div><p class="edu-degree">Master of Business Administration, Cloud Computing</p><p class="edu-school">Dublin Business School, Ireland</p></div>
+          <span class="edu-period">Apr 2025 — May 2026</span>
+        </div>
+        <div class="edu-item rv">
+          <div><p class="edu-degree">Master's Degree, Computational Science</p><p class="edu-school">Rathinam Global University</p></div>
+          <span class="edu-period">2021</span>
+        </div>
+        <div class="edu-item rv">
+          <div><p class="edu-degree">Bachelor's Degree, Computational Science</p><p class="edu-school">Rathinam Global University</p></div>
+          <span class="edu-period">2019</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Contact CTA ── -->
+    <div class="contact-section rv" id="sec-contact">
+      <h2 class="contact-title">Let's build something <em style="font-style:normal;color:rgba(255,140,66,.9)">reliable</em></h2>
+      <p class="contact-sub">Open to opportunities in Ireland — cloud infrastructure, system engineering, or general roles. Let's connect.</p>
+      <div class="contact-actions">
+        <a class="btn-primary" href="mailto:manikandanr7598@gmail.com">Email Me</a>
+        <a class="btn-secondary" href="https://www.linkedin.com/in/manikandan-raju-8a0b04219" target="_blank" rel="noopener">LinkedIn Profile</a>
+      </div>
+    </div>
+
+    <p class="footer-note">Dublin, Ireland · +353 89 440 9069 · manikandanr7598@gmail.com</p>
+
+  </div>
+</section>
+
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>
